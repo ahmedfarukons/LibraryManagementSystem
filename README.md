@@ -7,9 +7,6 @@ Bu proje, basit bir kütüphane yönetim sistemi uygulamasıdır. Java programla
 - Kitap ekleme ve listeleme
 - Üye ekleme ve listeleme
 - Kitap ödünç alma ve iade etme
-- Geciken kitapları takip etme
-- Üye başına maksimum 3 kitap limiti
-- 14 günlük ödünç alma süresi
 - Detaylı kitap ve üye bilgileri
 
 ## Kurulum
@@ -47,8 +44,5 @@ Program başlatıldığında aşağıdaki menü seçenekleri sunulur:
 
 ## Geliştirici
 
-[Adınız Soyadınız]
-
-## Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır.
+[Ahmed Faruk Onuş]
+Cursor dan yardım alınmıştır.
