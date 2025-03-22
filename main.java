@@ -1,10 +1,19 @@
 import java.util.Scanner;
 import java.util.List;
 
+/**
+ * Kütüphane Yönetim Sistemi'nin ana sınıfı.
+ * Kullanıcı arayüzünü ve menü sistemini yönetir.
+ * Kullanıcıdan alınan komutlara göre ilgili işlemleri gerçekleştirir.
+ */
 public class Main {
-    static Scanner input = new Scanner(System.in);
-    static Library library = new Library();
+    static Scanner input = new Scanner(System.in);  // Kullanıcı girişi için Scanner nesnesi
+    static Library library = new Library();         // Kütüphane nesnesi
 
+    /**
+     * Programın ana metodu
+     * @param args Komut satırı argümanları
+     */
     public static void main(String[] args) {
         initLibraryData();
         String isContinue = "y";
@@ -32,6 +41,9 @@ public class Main {
         input.close();
     }
 
+    /**
+     * Ana menüyü ekrana yazdırır
+     */
     public static void showMenu() {
         System.out.println("================================");
         System.out.println("1. Kitap listesini göster");
@@ -43,11 +55,18 @@ public class Main {
         System.out.println("================================");
     }
 
+    /**
+     * Kullanıcıdan menü seçimi alır
+     * @return Seçilen menü numarası
+     */
     public static int chooseMenu() {
         System.out.print("Seçiminiz: ");
         return input.nextInt();
     }
 
+    /**
+     * Kütüphaneye örnek kitaplar ekler
+     */
     public static void initLibraryData() {
         book book1 = new book("1", "Ateşten Gömlek", "Halide Edip Adıvar", "9789750719381");
         library.addBook(book1);
@@ -59,6 +78,9 @@ public class Main {
         library.addBook(book3);
     }
 
+    /**
+     * Kütüphanedeki tüm kitapları listeler
+     */
     public static void showBooks() {
         List<book> books = library.getBooks();
         if (books.isEmpty()) {
@@ -80,6 +102,9 @@ public class Main {
         }
     }
 
+    /**
+     * Kütüphaneye kayıtlı tüm üyeleri listeler
+     */
     public static void showMembers() {
         List<Member> members = library.getMembers();
         if (members.isEmpty()) {
@@ -101,6 +126,9 @@ public class Main {
         }
     }
 
+    /**
+     * Kütüphaneye yeni üye ekler
+     */
     public static void addMember() {
         System.out.print("Üye ID: ");
         String id = input.next();
@@ -124,6 +152,9 @@ public class Main {
         System.out.println("Üye başarıyla eklendi!");
     }
 
+    /**
+     * Kitap ödünç alma işlemini gerçekleştirir
+     */
     public static void borrowBook() {
         System.out.print("Üye ID: ");
         String memberId = input.next();
@@ -140,6 +171,9 @@ public class Main {
         System.out.println("Kitap ödünç alma işlemi gerçekleştirildi!");
     }
 
+    /**
+     * Kitap iade işlemini gerçekleştirir
+     */
     public static void returnBook() {
         System.out.print("Üye ID: ");
         String memberId = input.next();
@@ -156,6 +190,9 @@ public class Main {
         System.out.println("Kitap iade işlemi gerçekleştirildi!");
     }
 
+    /**
+     * Geciken kitapları listeler
+     */
     public static void showOverdueBooks() {
         List<book> overdueBooks = library.getOverdueBooks();
         if (overdueBooks.isEmpty()) {
